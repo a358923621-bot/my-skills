@@ -67,25 +67,38 @@ Tone: Sincere, apologetic, solution-oriented, taking responsibility
 
 1. **Open Review Page**: Navigate to Meituan business review management
 2. **Select Platform**: Choose "美团评价" or "点评评价" tab
-3. **Set Time Filter** (Optional): Click time range buttons to filter reviews
-   - **全部** - All time
-   - **近7天** - Last 7 days (recommended for regular replies)
-   - **近30天** - Last 30 days
-   - Or set custom date range using date picker
-4. **Filter Unreplied**: Click "未回复" button to show pending reviews
-5. **For Each Review**:
+3. **Filter Unreplied**: Click "未回复" button to show pending reviews
+4. **Set Time Filter to "近7天"**: Check last 7 days for unreplied reviews
+5. **Check Results**:
+   - If 0 reviews → Ask user: "近7天无未回复评价，需要切换到近30天查看吗？"
+   - If user agrees → Click "近30天" button
+6. **Check Multi-Store**:
+   - Click store selector dropdown to see all stores
+   - For each store: Select store → Check unreplied reviews → Reply if needed
+   - Move to next store until all stores checked
+7. **For Each Review**:
    - Check star rating
-   - Select appropriate response style
+   - Select appropriate response style (warm sister for 4-5 stars, sincere for 0.5-3.5 stars)
    - Click "回复" button
    - Fill in response content
    - Click "发送" to submit
-6. **Verify**: Refresh page to confirm reply was submitted
+8. **Summary Report**: Report results for all stores in table format
 
-## Time Filter Guidelines
+## Time Filter Workflow
 
-- **Daily routine**: Use "近7天" to catch recent reviews
-- **Weekly catch-up**: Use "近30天" for comprehensive review
-- **Custom range**: Use date picker for specific period (e.g., "2026/01/29 - 2026/02/04")
+**Step 1: Always check "近7天" first**
+- Click "未回复" filter
+- Click "近7天" time filter
+- Report result count
+
+**Step 2: If 0 results, ask user before proceeding**
+- "近7天无未回复评价，需要切换到近30天查看吗？"
+- Only proceed to "近30天" after user confirmation
+
+**Step 3: Check all stores if multi-store account**
+- Click store name dropdown
+- Iterate through all stores
+- Report summary for each store
 
 ## Key URLs
 
@@ -94,8 +107,21 @@ Tone: Sincere, apologetic, solution-oriented, taking responsibility
 
 ## Notes
 
-- Always match response style to review rating
-- Keep responses warm and personal for positive reviews
-- Be sincere and solution-focused for negative reviews
-- Wait 2-3 seconds after clicking "发送" before refreshing
-- Verify reply button disappeared to confirm success
+- **Progressive time filtering**: Always check "近7天" first, ask user before checking "近30天"
+- **Multi-store support**: Click store selector to see all stores, check each store individually
+- **Always match response style to review rating**
+- **Keep responses warm and personal for positive reviews**
+- **Be sincere and solution-focused for negative reviews**
+- **Wait 2-3 seconds after clicking "发送" before refreshing**
+- **Verify reply button disappeared to confirm success**
+- **Report summary in table format** when checking multiple stores
+
+## Example Summary Report
+
+```
+| 门店 | 近7天未回复 | 近30天未回复 |
+|------|------------|-------------|
+| 世纪莲地铁店 | 0 条 | 0 条 |
+| 金铂中心店 | - | 0 条 |
+| 万民金海店 | - | 0 条 |
+```
