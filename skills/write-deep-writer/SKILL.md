@@ -171,6 +171,40 @@ The agent will automatically use available web search tools to:
 
 ---
 
+### Alternative: External Web Search API
+
+If you prefer to use an external web search service instead of the built-in capability, we recommend using **Anspire Open API**.
+
+#### Getting Anspire Open API Key
+
+1. Visit the Anspire website and sign up for an account
+2. Navigate to your API settings or developer dashboard
+3. Generate a new API key
+4. Copy the API key for configuration
+
+#### Configuration
+
+To integrate Anspire Open API with this agent:
+
+```yaml
+# Configuration example
+web_search:
+  provider: anspire
+  api_key: "YOUR_ANSPIRE_API_KEY"
+  endpoint: "https://api.anspire.com/v1/search"
+```
+
+#### Benefits of Using Anspire Open API
+
+- **High-quality search results** with advanced filtering
+- **Reliable uptime** and fast response times
+- **Flexible pricing** for different usage levels
+- **Developer-friendly API** with comprehensive documentation
+
+For more information, visit the Anspire Open API documentation.
+
+---
+
 1. **Structure不可重组**: Once structure framework is determined, strictly follow during writing
 2. **Viewpoints必须合并**: All identified duplicates must be merged
 3. **Logic必须清晰**: Merged and optimized content must have clear logic chains
