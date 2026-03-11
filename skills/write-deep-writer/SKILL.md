@@ -1,6 +1,6 @@
 ---
 name: write-deep-writer
-description: Adaptive deep writing agent that transforms any input (video interviews, speeches, articles, podcasts) into coherent, in-depth written content with logical structure. Automatically identifies writing principles, target audience, and scenarios from input. Handles spoken language, merges duplicate viewpoints, and optimizes logic while preserving the original framework. Features three-stage workflow with todo list tracking: Analysis & Planning → Structure Design → Content Writing.
+description: Adaptive deep writing agent with web search capability. Transforms any input (video interviews, speeches, articles, podcasts) into coherent, in-depth written content with logical structure. Automatically identifies writing principles, target audience, and scenarios from input. Handles spoken language, merges duplicate viewpoints, optimizes logic while preserving original framework, and enriches content with real-world cases and data via web search. Features three-stage workflow with todo list tracking: Analysis & Planning → Structure Design → Content Writing.
 ---
 
 # Write Deep Writer
@@ -14,6 +14,7 @@ This agent converts spoken or fragmented content (video interviews, speeches, po
 - Handles spoken language and removes redundancies
 - Merges similar viewpoints for clarity
 - Optimizes logic while preserving original structure
+- **Researches real-world cases and data via web search**
 - Provides three-stage workflow with progress tracking
 
 ## Quick Start
@@ -82,6 +83,12 @@ Output: Deep, structured written content (5000-10000 words)
    - Ensures structure preservation
    - Validates principle satisfaction
 
+9. **Web Research**
+   - Searches for real-world cases, products, and data
+   - Finds latest research and statistics
+   - Retrieves expert opinions and policy documents
+   - Enriches content with credible sources and citations
+
 ## Workflow
 
 ### Three-Stage Process with Todo Tracking
@@ -101,10 +108,11 @@ Output: Deep, structured written content (5000-10000 words)
 **Output**: Optimized structure framework
 
 #### Stage 3: Content Writing
-- Step 6: Deep Writing
-- Step 7: Quality Check
+- Step 6: Web Research (for each section)
+- Step 7: Deep Writing
+- Step 8: Quality Check
 
-**Output**: Complete deep content
+**Output**: Complete deep content with real-world cases and data
 
 ## Todo List Management
 
@@ -121,7 +129,47 @@ Output: Deep, structured written content (5000-10000 words)
 - User confirmation required between stages
 - Create new tasks for blockers
 
-## Constraints
+## API Setup for Web Research
+
+This agent supports web search to enrich content with real-world cases, data, and sources.
+
+### Prerequisites
+
+The agent requires **web search capability** to function fully. If using in Claude Code or similar environments, ensure web search tools are available.
+
+### Web Search Integration
+
+During **Stage 3 (Content Writing)**, the agent will:
+
+1. **Identify research needs** for each section
+2. **Generate search queries** based on section topics
+3. **Retrieve relevant information** (cases, products, studies, data)
+4. **Integrate findings** into the deep writing
+5. **Add citations** to sources
+
+### Example Research Queries
+
+| Section | Sample Query |
+|---------|--------------|
+| Personalized learning | "Khan Academy Khanmigo AI adaptive learning cases" |
+| Teacher role evolution | "AI grading homework products effectiveness data" |
+| Dependency risks | "ChatGPT cheating students research dependency" |
+| Content bias | "AI education algorithm bias incidents" |
+| Social impact | "online learning social skills research" |
+| AI literacy education | "K12 AI literacy curriculum design" |
+| Future schools | "AI education pilot schools projects China" |
+
+### No Additional Installation Required
+
+When using this agent in supported environments (like Claude Code), web search is **built-in**. No additional API keys or installations are needed.
+
+The agent will automatically use available web search tools to:
+- Find recent examples and case studies
+- Retrieve statistics and research findings
+- Locate expert opinions and policy documents
+- Verify factual claims
+
+---
 
 1. **Structure不可重组**: Once structure framework is determined, strictly follow during writing
 2. **Viewpoints必须合并**: All identified duplicates must be merged
@@ -249,3 +297,5 @@ Each stage outputs clearly labeled content:
 - **Logic consistency**: Ensure clear logic chains in merged content
 - **Brief as baseline**: Always refer back to Brief document for consistency
 - **Quality check**: Perform thorough self-check before final output
+- **Web search integration**: Automatically searches for relevant cases, data, and sources during Stage 3 to ensure content depth and credibility
+- **Source citation**: Includes hyperlinks to sources when web research is utilized
